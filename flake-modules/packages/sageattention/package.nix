@@ -8,18 +8,15 @@
   cudaPackages,
   symlinkJoin,
   gnused,
+  gcc14Stdenv,
   COMFY_CUDA_ARCHS,
 }:
 let
-  patched_cuda_nvcc = cudaPackages.cuda_nvcc.overrideAttrs (oldAttrs: {
-    patches = (oldAttrs.patches or [ ]) ++ [ ./cuda-glibc-2.42.patch ];
-  });
-
   cuda-native-redist = symlinkJoin {
     name = "cuda-redist";
     paths = with cudaPackages; [
-      cuda_cudart # cuda_runtime.h
-      patched_cuda_nvcc
+      cuda_cudart
+      cuda_nvcc
     ];
   };
 in
@@ -31,6 +28,8 @@ buildPythonPackage rec {
   CUDA_VERSION = cudaPackages.cudaMajorMinorVersion;
   env.TORCH_CUDA_ARCH_LIST = COMFY_CUDA_ARCHS;
   version = "unstable-2025-07-21";
+
+  stdenv = gcc14Stdenv;
 
   src = fetchFromGitHub {
     owner = "thu-ml";
