@@ -302,19 +302,6 @@
       "url": "https://github.com/kijai/ComfyUI-KJNodes/archive/b7646ad70a7daa7aeb919ca542274758d26ba2df.tar.gz",
       "hash": "sha256-weTQsRK+x9g5SGRPAsy3HmFSiHwe3bIdk91QucTZv2o="
     },
-    "comfyui-last-frame-extractor": {
-      "type": "Git",
-      "repository": {
-        "type": "GitHub",
-        "owner": "Charonartist",
-        "repo": "comfyui-last-frame-extractor"
-      },
-      "branch": "master",
-      "submodules": false,
-      "revision": "30f294b1a0a87c7abaf979f04ee74d887a87f027",
-      "url": "https://github.com/Charonartist/comfyui-last-frame-extractor/archive/30f294b1a0a87c7abaf979f04ee74d887a87f027.tar.gz",
-      "hash": "sha256-t41rXtFlEXHBNSUk42oWwUTs3Zi3SddX3T+raaOL6vM="
-    },
     "comfyui-layer-style": {
       "type": "Git",
       "repository": {
